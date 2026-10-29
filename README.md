@@ -84,19 +84,6 @@ También se puede abrir `index.html` directamente desde el navegador, pero no es
 - La estructura es compatible con GitHub Pages.
 - Las rutas relativas están diseñadas para funcionar en un sitio desplegado.
 
-## Actualizaciones recientes
-
-- Se incorporó un plan de pruebas basado en la estructura real de la base de datos de usuarios, solicitudes y documentos.
-- Se creó un archivo JSON centralizado en `test-data/casos-prueba.json` como fuente única de verdad para los casos de prueba.
-- La vista de casos en `pages/plan-pruebas-api.html` consume ese JSON para renderizar la tabla sin duplicar información.
-- La lógica del plan y los ejemplos de formato se movieron a archivos JavaScript dedicados: `assets/js/plan-pruebas.js` y `assets/js/formato-casos.js`.
-- Se ajustó la plantilla de casos para que coincida con la estructura de QA pedida: ID, Módulo, Historia de usuario, Nombre, Prioridad, Precondiciones, Pasos, Resultado esperado y Estado.
-- Se estandarizó el estado de todos los casos a `Pendiente`.
-- Se normalizaron los tipos a `Funcional` y `No funcional` para mantener consistencia con el formato de prueba.
-- Se corrigió el comportamiento global del botón de Scroll Top para que aparezca al hacer scroll en todas las páginas del sitio.
-- Se ajustó la visual del botón para que coincida con el color de la navbar.
-- Se dejó preparado el proyecto para ser desplegado en GitHub Pages como sitio estático.
-
 ## Estado del proyecto
 
 El sitio se encuentra en fase de presentación y documentación de contenido académico para la semana 2 del programa Eureka, con contenido ya integrado para QA, casos de prueba, plan de pruebas y componentes visuales funcionales para navegación y presentación.
