@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué rol cumple un QA?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8">
+          <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Calidad y validación</span>
+          <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">¿Qué rol cumple un QA?</h1>
+        </div>
+        
+        <div class="grid lg:grid-cols-[1.5fr,0.8fr] gap-8">
+          <div>
+            <p class="text-lg text-slate-600 leading-relaxed">
+              Un QA (Quality Assurance) es la persona encargada de garantizar que un producto o sistema cumpla con los requisitos de negocio, las expectativas del usuario y los estándares de calidad. Según el <strong>ISTQB</strong>, el rol va más allá de encontrar bugs: abarca la prevención de defectos, la evaluación de procesos y la gestión rigurosa de pruebas a lo largo de todo el SDLC.
+            </p>
+            <div class="highlight-box mt-5">
+              El objetivo principal del QA no es buscar defectos por buscar, sino asegurar que el software entregue valor real, con calidad, confiabilidad y consistencia. La distinción clave: <strong>QA</strong> cuida los procesos; <strong>QC</strong> evalúa el producto final.
+            </div>
+
+            <h3 class="mt-8 text-xl font-bold text-slate-900">Funciones principales (según ISTQB CTFL)</h3>
+            <ul class="mt-4 space-y-3 text-slate-700">
+              <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500 shrink-0"></span><span><strong>Planificación:</strong> Definir estrategias de prueba, alcance, estimación de esfuerzo y criterios de salida.</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500 shrink-0"></span><span><strong>Análisis y diseño:</strong> Revisar requisitos tempranamente (shift-left) y diseñar casos usando técnicas como Boundary Value Analysis y Equivalence Partitioning.</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500 shrink-0"></span><span><strong>Identificación de riesgos:</strong> Priorizar esfuerzos donde el fallo tiene mayor impacto en el negocio (testing basado en riesgo).</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500 shrink-0"></span><span><strong>Gestión de defectos:</strong> Reportar, rastrear y verificar la resolución de bugs en herramientas como Jira, con pasos de reproducción, severidad y prioridad definida.</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500 shrink-0"></span><span><strong>Reporting:</strong> Generar informes de cobertura, métricas de calidad y riesgos residuales para stakeholders.</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand-500 shrink-0"></span><span><strong>Pruebas estáticas:</strong> Participar en revisiones de código, walkthroughs e inspecciones antes de que el código llegue a ejecución.</span></li>
+            </ul>
+
+            <h3 class="mt-8 text-xl font-bold text-slate-900">QA vs QC: diferencia fundamental</h3>
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+              <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                <p class="font-bold text-blue-800">Quality Assurance (QA)</p>
+                <p class="mt-2 text-slate-600 text-sm">Se enfoca en los <strong>procesos</strong>: métodos, estándares y prácticas que previenen defectos antes de que ocurran.</p>
+              </div>
+              <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                <p class="font-bold text-amber-800">Quality Control (QC)</p>
+                <p class="mt-2 text-slate-600 text-sm">Se enfoca en el <strong>producto</strong>: ejecutar pruebas, encontrar bugs y evaluar el software ya construido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Puntos clave</h4>
+            <ul class="space-y-3 text-slate-700">
+              <li>✔ Garantiza calidad de proceso y producto</li>
+              <li>✔ Valida requisitos funcionales y no funcionales</li>
+              <li>✔ Reduce riesgos con testing basado en riesgo</li>
+              <li>✔ Mejora la experiencia del usuario final</li>
+              <li>✔ Participa en todo el SDLC, no solo al final</li>
+              <li>✔ Comunica métricas claras a stakeholders</li>
+            </ul>
+            <div class="mt-5 rounded-xl bg-white border border-slate-200 p-4">
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">Herramientas comunes</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-brand-100 text-brand-700 px-2.5 py-1 text-xs font-semibold">Jira</span>
+                <span class="rounded-full bg-brand-100 text-brand-700 px-2.5 py-1 text-xs font-semibold">TestRail</span>
+                <span class="rounded-full bg-brand-100 text-brand-700 px-2.5 py-1 text-xs font-semibold">Postman</span>
+                <span class="rounded-full bg-brand-100 text-brand-700 px-2.5 py-1 text-xs font-semibold">Confluence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

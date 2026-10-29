@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué tipos de pruebas existen?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8">
+          <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Tipos de pruebas</span>
+          <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">¿Qué tipos de pruebas existen?</h1>
+        </div>
+
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          Una estrategia de calidad moderna combina distintos tipos de pruebas para cubrir tanto los requisitos <strong>funcionales</strong> como los <strong>no funcionales</strong>. Su distribución ideal sigue la <strong>Pirámide de Testing</strong>: muchas unitarias en la base, integración en el centro, y pruebas de sistema en la cima.
+        </p>
+
+        <!-- Pirámide visual -->
+        <div class="mb-8 rounded-2xl border border-brand-200 bg-brand-50 p-5">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Pirámide de Testing</h2>
+          <div class="flex flex-col items-center gap-1 mt-4">
+            <div class="w-24 text-center rounded-lg bg-red-100 border border-red-200 px-2 py-2 text-xs font-semibold text-red-700">E2E / UI</div>
+            <div class="w-40 text-center rounded-lg bg-amber-100 border border-amber-200 px-2 py-2 text-xs font-semibold text-amber-700">Integración & Regresión</div>
+            <div class="w-60 text-center rounded-lg bg-green-100 border border-green-200 px-2 py-2 text-xs font-semibold text-green-700">Pruebas Unitarias (gran volumen)</div>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 text-center">Las pruebas unitarias son rápidas y baratas; las de UI son costosas y lentas. Se recomienda invertir más en la base.</p>
+        </div>
+
+        <div id="tipos-pruebas-grid" class="grid md:grid-cols-2 gap-6"></div>
+        
+      </div>
+    </main>
+
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    <script>
+      const tiposDePruebas = [
+        {
+          title: 'Pruebas unitarias',
+          tag: 'Funcional',
+          tagColor: 'bg-green-100 text-green-700',
+          description: 'Validan la parte más pequeña del código (función, método o clase) de forma completamente aislada. Generalmente las escriben los desarrolladores y se integran en pipelines de CI/CD. Se usan mocks para simular dependencias externas.',
+          tools: ['JUnit', 'Jest', 'PyTest']
+        },
+        {
+          title: 'Pruebas de integración',
+          tag: 'Funcional',
+          tagColor: 'bg-green-100 text-green-700',
+          description: 'Verifican que distintos módulos, servicios o sistemas (como bases de datos, APIs de terceros o microservicios) trabajen correctamente entre sí. Se ejecutan después de las pruebas unitarias y antes de las pruebas de sistema completo.',
+          tools: ['Postman', 'REST-assured', 'Testcontainers']
+        },
+        {
+          title: 'Pruebas funcionales',
+          tag: 'Funcional',
+          tagColor: 'bg-green-100 text-green-700',
+          description: 'Validan que el sistema cumpla con los requisitos y casos de uso esperados desde la perspectiva del usuario. Se basan en historias de usuario, criterios de aceptación y reglas de negocio definidas.',
+          tools: ['Jira', 'TestRail', 'Zephyr']
+        },
+        {
+          title: 'Pruebas de regresión',
+          tag: 'Funcional',
+          tagColor: 'bg-green-100 text-green-700',
+          description: 'Se ejecutan para asegurar que un cambio reciente (nueva funcionalidad, corrección de bug o actualización de librería) no rompe funcionalidad ya existente. Son clave para garantizar la estabilidad continua del software.',
+          tools: ['Selenium', 'Cypress', 'Playwright']
+        },
+        {
+          title: 'Pruebas de rendimiento',
+          tag: 'No funcional',
+          tagColor: 'bg-blue-100 text-blue-700',
+          description: 'Evalúan tiempos de respuesta, capacidad y estabilidad bajo distintas cargas. Se dividen en: carga (usuarios esperados), estrés (más allá del límite) y resistencia (carga sostenida en el tiempo). Se ejecutan antes de salida a producción.',
+          tools: ['JMeter', 'k6', 'Gatling']
+        },
+        {
+          title: 'Pruebas de seguridad',
+          tag: 'No funcional',
+          tagColor: 'bg-red-100 text-red-700',
+          description: 'Buscan vulnerabilidades como inyección SQL, XSS, autenticación débil o exposición de datos sensibles (OWASP Top 10). Se realizan mediante análisis estático (SAST), dinámico (DAST) y pruebas de penetración (pentesting).',
+          tools: ['OWASP ZAP', 'Burp Suite', 'SonarQube']
+        },
+        {
+          title: 'Pruebas de usabilidad',
+          tag: 'No funcional',
+          tagColor: 'bg-purple-100 text-purple-700',
+          description: 'Evalúan la facilidad de uso, claridad de la interfaz y experiencia del usuario (UX). Son el tipo de prueba que las herramientas automáticas no pueden reemplazar, ya que requieren observación del comportamiento humano real.',
+          tools: ['Hotjar', 'UserTesting', 'Maze']
+        },
+        {
+          title: 'Pruebas de API',
+          tag: 'Funcional',
+          tagColor: 'bg-green-100 text-green-700',
+          description: 'Validan endpoints REST o SOAP: métodos HTTP (GET, POST, PUT, DELETE), códigos de estado (200, 201, 400, 401, 404, 500), estructura del payload JSON, autenticación (Bearer, OAuth2) y manejo de errores.',
+          tools: ['Postman', 'Insomnia', 'REST-assured']
+        }
+      ];
+
+      const grid = document.getElementById('tipos-pruebas-grid');
+
+      if (grid) {
+        grid.innerHTML = tiposDePruebas.map(({ title, tag, tagColor, description, tools }) => `
+          <article class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold">${title}</h3>
+              <span class="rounded-full ${tagColor} px-2.5 py-1 text-xs font-semibold">${tag}</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed">${description}</p>
+            <div class="flex flex-wrap gap-2 mt-auto pt-2">
+              ${tools.map(t => `<span class="rounded-full bg-white border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-600">${t}</span>`).join('')}
+            </div>
+          </article>
+        `).join('');
+      }
+    </script>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

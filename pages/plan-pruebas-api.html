@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan de pruebas para una API REST</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8 grid gap-6 lg:grid-cols-[1.4fr,0.8fr] lg:items-center">
+          <div>
+            <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Plan de pruebas</span>
+            <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">Plan de pruebas para una API REST</h1>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Plan de pruebas QA" class="h-52 w-full max-w-sm rounded-2xl border border-slate-200 object-cover shadow-soft" />
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          El objetivo del plan de pruebas es validar que la API cumpla con los requisitos de negocio, responda con los códigos HTTP esperados y maneje errores, autenticación, seguridad básica y datos válidos en todos sus endpoints.
+        </div>
+
+        <section class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Proyecto</p>
+            <p class="mt-2 text-lg font-bold text-slate-900">API de gestión de usuarios</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Ambiente</p>
+            <p class="mt-2 text-lg font-bold text-slate-900">QA / Staging</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Versión</p>
+            <p class="mt-2 text-lg font-bold text-slate-900">v1.2.0</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Responsable</p>
+            <p class="mt-2 text-lg font-bold text-slate-900">Equipo QA</p>
+          </div>
+        </section>
+
+        <div class="mt-8 space-y-8">
+          <section>
+            <h3 class="text-xl font-bold mb-3">1. Introducción</h3>
+            <p class="text-slate-600 leading-relaxed">
+              La API REST permite gestionar usuarios, autenticación, consultas y operaciones básicas CRUD. El objetivo principal del plan es asegurar que los endpoints funcionen correctamente, validen entradas, entreguen respuestas consistentes y cumplan con los requisitos del negocio.
+            </p>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-bold mb-3">2. Alcance</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>• Autenticación con login y token.</li>
+              <li>• Consulta, creación y actualización de usuarios.</li>
+              <li>• Validación de permisos y roles.</li>
+              <li>• Manejo de errores HTTP y mensajes de respuesta.</li>
+              <li>• Verificación de datos inválidos, nulos y límites de entrada.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-bold mb-3">3. Fuera de alcance</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>• Pruebas de rendimiento, estrés y carga.</li>
+              <li>• Pruebas de seguridad avanzadas como pentesting.</li>
+              <li>• Validaciones de terceros o integraciones externas no definidas en el sprint.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-bold mb-3">4. Estrategia de pruebas</h3>
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <h4 class="font-bold text-slate-900">Tipo de prueba</h4>
+                <p class="mt-2 text-slate-600">Pruebas funcionales y de API basadas en historias de usuario, validación de datos y escenarios de error.</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <h4 class="font-bold text-slate-900">Método</h4>
+                <p class="mt-2 text-slate-600">Ejecución manual con Postman y validación de respuestas HTTP, payloads y códigos de estado.</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <h4 class="font-bold text-slate-900">Ambiente</h4>
+                <p class="mt-2 text-slate-600">URL base de pruebas: <span class="font-semibold">https://api-qa.example.com</span></p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <h4 class="font-bold text-slate-900">Datos de prueba</h4>
+                <p class="mt-2 text-slate-600">Usuarios válidos, usuarios inexistentes, credenciales incorrectas, campos obligatorios y payloads inválidos.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-bold mb-3">5. Riesgos y mitigación</h3>
+            <div class="overflow-x-auto">
+              <table class="min-w-full border border-slate-200 rounded-xl overflow-hidden">
+                <thead class="bg-amber-50">
+                  <tr>
+                    <th class="p-3 text-left">Riesgo</th>
+                    <th class="p-3 text-left">Probabilidad</th>
+                    <th class="p-3 text-left">Impacto</th>
+                    <th class="p-3 text-left">Mitigación</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white">
+                  <tr class="border-t border-slate-200">
+                    <td class="p-3">Ambiente de pruebas no disponible</td>
+                    <td class="p-3">Media</td>
+                    <td class="p-3">Alto</td>
+                    <td class="p-3">Validar disponibilidad del servicio antes de la ejecución y preparar un entorno alternativo.</td>
+                  </tr>
+                  <tr class="border-t border-slate-200">
+                    <td class="p-3">Datos inconsistentes en QA</td>
+                    <td class="p-3">Baja</td>
+                    <td class="p-3">Medio</td>
+                    <td class="p-3">Preparar datos de prueba estandarizados y limpiarlos antes de cada ejecución.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-bold mb-3">6. Casos de prueba</h3>
+            <p class="mb-4 text-slate-600">A continuación se presentan los casos de prueba del plan, alineados con la estructura y la información del sistema.</p>
+            <div class="mb-4 flex flex-wrap gap-3">
+              <button id="export-csv" type="button" class="inline-flex items-center rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400">Exportar CSV</button>
+              <button id="export-json" type="button" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300">Exportar JSON</button>
+            </div>
+            <div id="casos-prueba-container"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/plan-pruebas.js"></script>
+  </body>
+</html>

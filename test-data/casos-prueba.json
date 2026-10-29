@@ -1,0 +1,473 @@
+{
+  "titulo": "Casos de prueba - Usuarios, solicitudes y documentos",
+  "objetivo": "Validar la integridad, unicidad, obligatoriedad y reglas de negocio de las tablas del sistema.",
+  "version": "1.0",
+  "planPrueba": [
+    {
+      "epic": "usuarios",
+      "grupo": "usuarios",
+      "descripcion": "Validaciones de creación, unicidad y campos obligatorios",
+      "ids": [
+        "TC-01",
+        "TC-02",
+        "TC-03",
+        "TC-04",
+        "TC-05",
+        "TC-06",
+        "TC-07"
+      ]
+    },
+    {
+      "epic": "solicitudes",
+      "grupo": "solicitudes",
+      "descripcion": "Validaciones de negocio y relación con usuarios",
+      "ids": [
+        "TC-08",
+        "TC-09",
+        "TC-10",
+        "TC-11",
+        "TC-12",
+        "TC-13"
+      ]
+    },
+    {
+      "epic": "documentos",
+      "grupo": "documentos",
+      "descripcion": "Relación con solicitudes y validación de archivos",
+      "ids": [
+        "TC-14",
+        "TC-15",
+        "TC-16",
+        "TC-17"
+      ]
+    },
+    {
+      "epic": "integridad",
+      "grupo": "integridad",
+      "descripcion": "Restricciones referenciales y cascade rules",
+      "ids": [
+        "TC-18",
+        "TC-19",
+        "TC-20"
+      ]
+    }
+  ],
+  "casos": [
+    {
+      "id": "TC-01",
+      "epic": "usuarios",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como usuario del sistema, quiero poder registrarme con datos válidos para acceder correctamente a la plataforma.",
+      "tipo": "Funcional",
+      "titulo": "Crear usuario válido",
+      "tabla": "usuarios",
+      "payload": {
+        "nombre_usuario": "jgarcia",
+        "email_usuario": "jgarcia@empresa.com",
+        "clave_hash": "$2b$12$7E0Qb5J0FzTXEZ6K0M0xQe6N8sZg5QXT7WnI1Zq0VxD8m9YqwF2uK",
+        "nombre": "Juan",
+        "apellido": "Garcia",
+        "telefono": "+56912345678",
+        "idioma": "es",
+        "zona_horaria": "America/Santiago"
+      },
+      "resultadoEsperado": "El registro del usuario se completa correctamente.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-01.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-02",
+      "epic": "usuarios",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como usuario del sistema, quiero evitar duplicados en mi correo para mantener la integridad de mis datos.",
+      "tipo": "No funcional",
+      "titulo": "Email duplicado",
+      "tabla": "usuarios",
+      "payload": {
+        "nombre_usuario": "mlopez",
+        "email_usuario": "jgarcia@empresa.com",
+        "clave_hash": "$2b$12$7E0Qb5J0FzTXEZ6K0M0xQe6N8sZg5QXT7WnI1Zq0VxD8m9YqwF2uK",
+        "nombre": "Maria",
+        "apellido": "Lopez"
+      },
+      "resultadoEsperado": "El sistema rechaza el registro porque el correo ya está registrado.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-02.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-03",
+      "epic": "usuarios",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como usuario del sistema, quiero que mi nombre de usuario sea único para no generar conflictos de acceso.",
+      "tipo": "No funcional",
+      "titulo": "Nombre de usuario duplicado",
+      "tabla": "usuarios",
+      "payload": {
+        "nombre_usuario": "jgarcia",
+        "email_usuario": "mlopez@empresa.com",
+        "clave_hash": "$2b$12$7E0Qb5J0FzTXEZ6K0M0xQe6N8sZg5QXT7WnI1Zq0VxD8m9YqwF2uK",
+        "nombre": "Maria",
+        "apellido": "Lopez"
+      },
+      "resultadoEsperado": "El sistema rechaza el registro porque el nombre de usuario ya está en uso.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-03.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-04",
+      "epic": "usuarios",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como usuario del sistema, quiero registrar datos obligatorios válidos para completar mi perfil sin errores.",
+      "tipo": "No funcional",
+      "titulo": "Email vacío",
+      "tabla": "usuarios",
+      "payload": {
+        "nombre_usuario": "anunez",
+        "email_usuario": "",
+        "clave_hash": "$2b$12$7E0Qb5J0FzTXEZ6K0M0xQe6N8sZg5QXT7WnI1Zq0VxD8m9YqwF2uK",
+        "nombre": "Ana",
+        "apellido": "Nunez"
+      },
+      "resultadoEsperado": "El sistema no permite continuar porque faltan datos obligatorios o el formato es incorrecto.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-04.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-05",
+      "epic": "usuarios",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como sistema, quiero validar la clave encriptada para impedir accesos con credenciales inválidas.",
+      "tipo": "No funcional",
+      "titulo": "Clave hash con longitud inválida",
+      "tabla": "usuarios",
+      "payload": {
+        "nombre_usuario": "rlopez",
+        "email_usuario": "rlopez@empresa.com",
+        "clave_hash": "abc123",
+        "nombre": "Rodrigo",
+        "apellido": "Lopez"
+      },
+      "resultadoEsperado": "El sistema rechaza la contraseña porque su formato no es válido.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-05.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-06",
+      "epic": "usuarios",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como usuario del sistema, quiero poder guardar mi información con campos opcionales vacíos sin que falle el registro.",
+      "tipo": "Funcional",
+      "titulo": "Usuario con campos opcionales nulos",
+      "tabla": "usuarios",
+      "payload": {
+        "nombre_usuario": "lfernandez",
+        "email_usuario": "lfernandez@empresa.com",
+        "clave_hash": "$2b$12$7E0Qb5J0FzTXEZ6K0M0xQe6N8sZg5QXT7WnI1Zq0VxD8m9YqwF2uK",
+        "nombre": "Luis",
+        "apellido": "Fernandez",
+        "telefono": null,
+        "idioma": null,
+        "zona_horaria": null
+      },
+      "resultadoEsperado": "El registro se guarda correctamente aunque algunos campos opcionales queden vacíos.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-06.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-07",
+      "epic": "usuarios",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como sistema, quiero validar los límites máximos de longitud para evitar inconsistencias en la información del usuario.",
+      "tipo": "No funcional",
+      "titulo": "Validación de longitud máxima",
+      "tabla": "usuarios",
+      "payload": {
+        "nombre_usuario": "usuario_50",
+        "email_usuario": "limite@empresa.com",
+        "clave_hash": "$2b$12$7E0Qb5J0FzTXEZ6K0M0xQe6N8sZg5QXT7WnI1Zq0VxD8m9YqwF2uK",
+        "nombre": "NombreConLongitudMaximaNombreConLongitudMaxima",
+        "apellido": "ApellidoConLongitudMaximaApellidoConLongitudMaxima"
+      },
+      "resultadoEsperado": "El sistema acepta los valores dentro del límite permitido y rechaza los que lo exceden.",
+      "estado": "Pendiente",
+      "prioridad": "Media",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-07.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-08",
+      "epic": "solicitudes",
+      "modulo": "solicitudes",
+      "historiaUsuario": "Como gestor del sistema, quiero crear solicitudes válidas para publicar vacantes con la información correcta.",
+      "tipo": "Funcional",
+      "titulo": "Crear solicitud válida",
+      "tabla": "solicitudes",
+      "payload": {
+        "usuario_id": 1,
+        "titulo": "Desarrollador Full Stack Senior",
+        "estado": "Pendiente",
+        "area": "Tecnologia",
+        "pais": "Chile",
+        "localizacion": "Santiago",
+        "numero_vacantes": 2,
+        "descripcion": "Se requiere experiencia en React, Node.js y SQL.",
+        "base_educacional": "Ingenieria en Informatica o afín.",
+        "conocimientos_excluyentes": "No se aceptan perfiles sin experiencia en backend.",
+        "renta_desde": 1800000,
+        "renta_hasta": 2600000,
+        "modalidad_trabajo": "hibrido",
+        "tipo_servicio": "contrato",
+        "nivel_experiencia": "senior",
+        "fecha_inicio_proyecto": "2026-11-15"
+      },
+      "resultadoEsperado": "La solicitud se guarda correctamente con toda la información requerida.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario existente en el sistema y permisos habilitados.",
+      "pasos": "1. Preparar datos del caso TC-08.\n2. Ejecutar la operación sobre la tabla solicitudes.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-09",
+      "epic": "solicitudes",
+      "modulo": "solicitudes",
+      "historiaUsuario": "Como sistema, quiero validar la relación con el usuario para evitar solicitudes no asociadas a un registro real.",
+      "tipo": "No funcional",
+      "titulo": "Solicitud con usuario inexistente",
+      "tabla": "solicitudes",
+      "payload": {
+        "usuario_id": 999999,
+        "titulo": "Analista de Datos",
+        "estado": "Pendiente",
+        "numero_vacantes": 1
+      },
+      "resultadoEsperado": "El sistema rechaza la operación porque la relación con el usuario no es válida.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario existente en el sistema y permisos habilitados.",
+      "pasos": "1. Preparar datos del caso TC-09.\n2. Ejecutar la operación sobre la tabla solicitudes.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-10",
+      "epic": "solicitudes",
+      "modulo": "solicitudes",
+      "historiaUsuario": "Como gestor del sistema, quiero validar la cantidad de vacantes para asegurar que se publique al menos una posición disponible.",
+      "tipo": "No funcional",
+      "titulo": "Numero de vacantes en cero",
+      "tabla": "solicitudes",
+      "payload": {
+        "usuario_id": 1,
+        "titulo": "Frontend Developer",
+        "estado": "Pendiente",
+        "numero_vacantes": 0
+      },
+      "resultadoEsperado": "El sistema no permite una solicitud con cero vacantes.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario existente en el sistema y permisos habilitados.",
+      "pasos": "1. Preparar datos del caso TC-10.\n2. Ejecutar la operación sobre la tabla solicitudes.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-11",
+      "epic": "solicitudes",
+      "modulo": "solicitudes",
+      "historiaUsuario": "Como gestor del sistema, quiero que el título de la solicitud sea obligatorio para identificar claramente la vacante.",
+      "tipo": "No funcional",
+      "titulo": "Título vacío",
+      "tabla": "solicitudes",
+      "payload": {
+        "usuario_id": 1,
+        "titulo": "",
+        "estado": "Pendiente",
+        "numero_vacantes": 1
+      },
+      "resultadoEsperado": "El sistema rechaza la solicitud porque falta información obligatoria.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario existente en el sistema y permisos habilitados.",
+      "pasos": "1. Preparar datos del caso TC-11.\n2. Ejecutar la operación sobre la tabla solicitudes.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-12",
+      "epic": "solicitudes",
+      "modulo": "solicitudes",
+      "historiaUsuario": "Como gestor del sistema, quiero validar el rango salarial para evitar inconsistencias en la publicación de la vacante.",
+      "tipo": "No funcional",
+      "titulo": "Renta desde mayor que renta hasta",
+      "tabla": "solicitudes",
+      "payload": {
+        "usuario_id": 1,
+        "titulo": "Especialista en Seguridad",
+        "estado": "Pendiente",
+        "numero_vacantes": 1,
+        "renta_desde": 3500000,
+        "renta_hasta": 2200000
+      },
+      "resultadoEsperado": "El sistema rechaza la operación porque el valor está fuera del rango permitido.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario existente en el sistema y permisos habilitados.",
+      "pasos": "1. Preparar datos del caso TC-12.\n2. Ejecutar la operación sobre la tabla solicitudes.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-13",
+      "epic": "solicitudes",
+      "modulo": "solicitudes",
+      "historiaUsuario": "Como gestor del sistema, quiero validar la fecha de inicio del proyecto para asegurar que se ingresa una fecha real y consistente.",
+      "tipo": "No funcional",
+      "titulo": "Fecha inválida",
+      "tabla": "solicitudes",
+      "payload": {
+        "usuario_id": 1,
+        "titulo": "Ingeniero QA",
+        "estado": "Pendiente",
+        "numero_vacantes": 1,
+        "fecha_inicio_proyecto": "2026-02-30"
+      },
+      "resultadoEsperado": "El sistema rechaza la fecha porque no cumple con el formato o el rango esperado.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario existente en el sistema y permisos habilitados.",
+      "pasos": "1. Preparar datos del caso TC-13.\n2. Ejecutar la operación sobre la tabla solicitudes.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-14",
+      "epic": "documentos",
+      "modulo": "documentos",
+      "historiaUsuario": "Como postulante, quiero adjuntar mi documento con formato válido para completar mi solicitud correctamente.",
+      "tipo": "Funcional",
+      "titulo": "Documento válido",
+      "tabla": "documentos",
+      "payload": {
+        "solicitud_id": 1,
+        "extension": ".pdf",
+        "nombre_archivo": "cv_jgarcia.pdf"
+      },
+      "resultadoEsperado": "El documento queda asociado correctamente a la solicitud.",
+      "estado": "Pendiente",
+      "prioridad": "Media",
+      "precondiciones": "Solicitud válida creada previamente.",
+      "pasos": "1. Preparar datos del caso TC-14.\n2. Ejecutar la operación sobre la tabla documentos.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-15",
+      "epic": "documentos",
+      "modulo": "documentos",
+      "historiaUsuario": "Como sistema, quiero validar la relación del documento con una solicitud existente para evitar archivos huérfanos.",
+      "tipo": "No funcional",
+      "titulo": "Documento con solicitud inexistente",
+      "tabla": "documentos",
+      "payload": {
+        "solicitud_id": 999999,
+        "extension": ".docx",
+        "nombre_archivo": "cv_invalido.docx"
+      },
+      "resultadoEsperado": "El sistema rechaza la operación porque la relación con el usuario no es válida.",
+      "estado": "Pendiente",
+      "prioridad": "Media",
+      "precondiciones": "Solicitud válida creada previamente.",
+      "pasos": "1. Preparar datos del caso TC-15.\n2. Ejecutar la operación sobre la tabla documentos.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-16",
+      "epic": "documentos",
+      "modulo": "documentos",
+      "historiaUsuario": "Como sistema, quiero validar la extensión del archivo para asegurar que el documento tenga formato permitido.",
+      "tipo": "No funcional",
+      "titulo": "Extensión vacía",
+      "tabla": "documentos",
+      "payload": {
+        "solicitud_id": 1,
+        "extension": "",
+        "nombre_archivo": "documento_sin_extension"
+      },
+      "resultadoEsperado": "El sistema rechaza el documento porque falta la extensión o el archivo no es válido.",
+      "estado": "Pendiente",
+      "prioridad": "Media",
+      "precondiciones": "Solicitud válida creada previamente.",
+      "pasos": "1. Preparar datos del caso TC-16.\n2. Ejecutar la operación sobre la tabla documentos.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-17",
+      "epic": "documentos",
+      "modulo": "documentos",
+      "historiaUsuario": "Como sistema, quiero sanitizar el nombre del archivo para prevenir rutas sospechosas o ataques de carga de archivos.",
+      "tipo": "No funcional",
+      "titulo": "Nombre de archivo con ruta sospechosa",
+      "tabla": "documentos",
+      "payload": {
+        "solicitud_id": 1,
+        "extension": ".pdf",
+        "nombre_archivo": "../cv/injection.pdf"
+      },
+      "resultadoEsperado": "El sistema rechaza el nombre del archivo porque no cumple con el formato permitido.",
+      "estado": "Pendiente",
+      "prioridad": "Media",
+      "precondiciones": "Solicitud válida creada previamente.",
+      "pasos": "1. Preparar datos del caso TC-17.\n2. Ejecutar la operación sobre la tabla documentos.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-18",
+      "epic": "integridad",
+      "modulo": "integridad",
+      "historiaUsuario": "Como sistema, quiero proteger la integridad de los datos para impedir eliminaciones de usuarios con información relacionada.",
+      "tipo": "No funcional",
+      "titulo": "Eliminar usuario con solicitudes asociadas",
+      "tabla": "usuarios",
+      "payload": {
+        "accion": "DELETE FROM usuarios WHERE id = 1"
+      },
+      "resultadoEsperado": "El sistema impide la eliminación porque la información está relacionada con otros registros.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Datos base creados y restricciones del sistema vigentes.",
+      "pasos": "1. Preparar datos del caso TC-18.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-19",
+      "epic": "integridad",
+      "modulo": "integridad",
+      "historiaUsuario": "Como sistema, quiero mantener la consistencia de los documentos y solicitudes para evitar registros huérfanos.",
+      "tipo": "No funcional",
+      "titulo": "Eliminar solicitud con documentos asociados",
+      "tabla": "solicitudes",
+      "payload": {
+        "accion": "DELETE FROM solicitudes WHERE id = 1"
+      },
+      "resultadoEsperado": "El sistema elimina la información relacionada o bloquea la acción según la regla de negocio.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Datos base creados y restricciones del sistema vigentes.",
+      "pasos": "1. Preparar datos del caso TC-19.\n2. Ejecutar la operación sobre la tabla solicitudes.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    },
+    {
+      "id": "TC-20",
+      "epic": "integridad",
+      "modulo": "usuarios",
+      "historiaUsuario": "Como sistema, quiero evitar duplicados al actualizar información personal para mantener la consistencia del registro.",
+      "tipo": "No funcional",
+      "titulo": "Actualizar email duplicado",
+      "tabla": "usuarios",
+      "payload": {
+        "usuario_id": 1,
+        "email_usuario": "mlopez@empresa.com"
+      },
+      "resultadoEsperado": "El sistema rechaza el registro porque el correo ya está registrado.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "precondiciones": "Usuario sin registro previo y datos válidos.",
+      "pasos": "1. Preparar datos del caso TC-20.\n2. Ejecutar la operación sobre la tabla usuarios.\n3. Validar la respuesta del sistema.\n4. Confirmar la regla de negocio o la restricción correspondiente."
+    }
+  ]
+}

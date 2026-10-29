@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué es el lenguaje de programación Java?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8">
+          <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Java y aplicaciones web</span>
+          <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">¿Qué es el lenguaje de programación Java?</h1>
+        </div>
+        
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Java es un lenguaje de programación orientado a objetos, desarrollado originalmente por Sun Microsystems (hoy Oracle) y ampliamente utilizado en el desarrollo de aplicaciones empresariales, backend, servicios web y sistemas robustos. Con un ciclo de lanzamiento de 6 meses, sigue evolucionando con características modernas como <strong>Virtual Threads</strong> (Project Loom) y soporte nativo para cloud e IA.
+        </p>
+
+        <div class="highlight-box mt-6">
+          El principio central de Java: <strong>"Write Once, Run Anywhere" (WORA)</strong>. El código fuente se compila en bytecode que puede ejecutarse en cualquier sistema operativo con una JVM instalada, lo que garantiza portabilidad real entre plataformas.
+        </div>
+
+        <!-- JVM explicada -->
+        <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="text-xl font-bold mb-3">¿Qué es la JVM?</h3>
+          <p class="text-slate-600">La <strong>Java Virtual Machine (JVM)</strong> es el corazón del ecosistema Java. Interpreta el bytecode y lo ejecuta en el hardware del sistema. Además de Java, lenguajes como <strong>Kotlin, Scala y Groovy</strong> también compilan a bytecode JVM, permitiendo interoperabilidad entre lenguajes en el mismo stack. Los recolectores de basura modernos (ZGC, G1) garantizan alto rendimiento con baja latencia.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-green-50 border border-green-200 rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-green-800">Ventajas</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>✔ <strong>Portabilidad:</strong> WORA gracias a la JVM — mismo código en cualquier SO</li>
+              <li>✔ <strong>Ecosistema maduro:</strong> Frameworks como Spring Boot, Hibernate, Jakarta EE</li>
+              <li>✔ <strong>Seguridad empresarial:</strong> Verificación de bytecode, gestión de memoria y criptografía nativa</li>
+              <li>✔ <strong>Gestión automática de memoria:</strong> Garbage Collection reduce fugas de memoria</li>
+              <li>✔ <strong>Alto rendimiento:</strong> Compilación JIT optimiza la ejecución en tiempo real</li>
+              <li>✔ <strong>Retrocompatibilidad:</strong> Código legacy funciona en JVMs modernas con mínimos cambios</li>
+              <li>✔ <strong>Pool de talento:</strong> Gran comunidad global y abundante documentación</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-red-800">Desventajas</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>✖ <strong>Verbosidad:</strong> Requiere más código boilerplate comparado con Python o TypeScript</li>
+              <li>✖ <strong>Overhead de la JVM:</strong> Mayor consumo de memoria que lenguajes compilados como Go o C</li>
+              <li>✖ <strong>Arranque lento:</strong> El cold-start puede ser un problema en funciones serverless (mitigado por GraalVM Native Image)</li>
+              <li>✖ <strong>Curva de aprendizaje:</strong> Conceptos como genéricos, concurrencia y manejo de memoria requieren experiencia</li>
+              <li>✖ <strong>Licenciamiento Oracle JDK:</strong> Requiere auditoría para evitar costos inesperados en producción (usar OpenJDK como alternativa libre)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ¿Cuándo usar Java? -->
+        <div class="mt-8 grid md:grid-cols-2 gap-4">
+          <div class="rounded-xl bg-blue-50 border border-blue-200 p-5">
+            <p class="font-bold text-blue-800 mb-2">✔ Elegir Java si:</p>
+            <p class="text-sm text-slate-600">Construyes sistemas backend complejos, microservicios escalables, aplicaciones financieras, gubernamentales o de salud donde la robustez, escalabilidad y seguridad son críticas.</p>
+          </div>
+          <div class="rounded-xl bg-amber-50 border border-amber-200 p-5">
+            <p class="font-bold text-amber-800 mb-2">⚠ Reconsiderar Java si:</p>
+            <p class="text-sm text-slate-600">Construyes prototipos rápidos, funciones serverless de arranque ultrarrápido o scripts simples donde Python o Node.js ofrecen menor fricción.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box mt-8">Java se destaca por su estabilidad, escalabilidad y capacidad para construir software fuerte y mantenible, especialmente en entornos empresariales. Lejos de ser un lenguaje legacy estático, Java moderno se adapta a microservicios, contenedores (Docker/Kubernetes) e incluso pipelines de IA con Apache Kafka y Spark.</div>
+        
+      </div>
+    </main>
+
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

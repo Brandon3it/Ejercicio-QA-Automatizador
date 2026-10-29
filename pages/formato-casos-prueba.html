@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estructura o formato para registrar casos de prueba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8">
+          <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Casos de prueba</span>
+          <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">Estructura o formato para registrar casos de prueba</h1>
+        </div>
+
+        <div class="mb-8 rounded-2xl border border-brand-200 bg-brand-50 p-5">
+          <h2 class="text-xl font-bold text-slate-900">Plantilla de caso de prueba alineada con el plan</h2>
+          <p class="mt-2 text-slate-700">El formato del caso de prueba debe coincidir con la estructura del plan y con el modelo de negocio real del sistema: módulo, historia de usuario, nombre del caso, prioridad, precondiciones, pasos, resultado esperado y estado.</p>
+          <div class="mt-4 grid gap-4 md:grid-cols-2">
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-slate-200">
+              <p class="text-xs font-semibold uppercase tracking-wide text-brand-700">Módulo</p>
+              <p class="mt-2 font-semibold text-slate-900">usuarios</p>
+            </div>
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-slate-200">
+              <p class="text-xs font-semibold uppercase tracking-wide text-brand-700">Historia de usuario</p>
+              <p class="mt-2 font-medium text-slate-900">Como usuario del sistema, quiero poder registrarme con datos válidos para acceder correctamente a la plataforma.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-blue-50">
+              <tr>
+                <th class="text-left p-3">ID</th>
+                <th class="text-left p-3">Módulo</th>
+                <th class="text-left p-3">Historia de usuario</th>
+                <th class="text-left p-3">Nombre</th>
+                <th class="text-left p-3">Prioridad</th>
+                <th class="text-left p-3">Precondiciones</th>
+                <th class="text-left p-3">Pasos</th>
+                <th class="text-left p-3">Resultado esperado</th>
+                <th class="text-left p-3">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="casos-ejemplo-body" class="bg-white"></tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box mt-8">El formato de caso de prueba para este proyecto mantiene la misma estructura del plan: ID, módulo, historia de usuario, nombre, prioridad, precondiciones, pasos, resultado esperado y estado. En este caso, el valor del estado se deja en Pendiente para todos los escenarios.</div>
+      </div>
+    </main>
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/formato-casos.js"></script>
+  </body>
+</html>

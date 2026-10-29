@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué habilidades debe tener un QA?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8">
+          <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Competencias esenciales</span>
+          <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">¿Qué habilidades debe tener un QA?</h1>
+        </div>
+
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          El perfil de un QA Tester va mucho más allá de ejecutar pruebas o hacer clic en botones. Combina <strong>habilidades técnicas (hard skills)</strong> con <strong>competencias cognitivas y comunicativas (soft skills)</strong>, donde el pensamiento analítico y la comunicación juegan un papel protagonista.
+        </p>
+
+        <!-- Soft Skills -->
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Habilidades blandas (Soft Skills)</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Pensamiento analítico</h3>
+            <p class="text-slate-600">Un QA debe entender la lógica detrás de los sistemas para anticiparse a los problemas. Incluye detección de casos borde (edge cases), análisis de causa raíz (root cause analysis) y desglose de requisitos ambiguos o contradictorios.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Atención al detalle</h3>
+            <p class="text-slate-600">Muchas fallas se detectan por pequeñas inconsistencias visuales, textos desalineados o desviaciones lógicas. El QA debe revisar cada detalle funcional, de interacción y de interfaz que otros suelen pasar por alto.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Comunicación asertiva</h3>
+            <p class="text-slate-600">Debe comunicar defectos y riesgos con claridad, sin generar fricciones con el equipo de desarrollo. Un buen reporte de bug incluye pasos exactos de reproducción, evidencias (capturas o videos), comportamiento esperado vs. obtenido y severidad.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Gestión del tiempo</h3>
+            <p class="text-slate-600">Capacidad para organizar la carga de trabajo cuando hay múltiples tareas o entregas urgentes. Saber priorizar qué probar primero según el riesgo del negocio es fundamental en ciclos de entrega ágiles.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Trabajo en equipo</h3>
+            <p class="text-slate-600">Integración fluida en equipos multidisciplinarios (Scrum/Kanban). El QA entiende que la calidad es una responsabilidad compartida y actúa como puente entre negocio, desarrollo y gestión de producto.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Metodologías ágiles</h3>
+            <p class="text-slate-600">Un QA moderno comprende las ceremonias de Scrum (planning, daily, retrospectiva), escucha activamente los requerimientos y adapta su discurso técnico según el interlocutor: desarrollador, PO o stakeholder de negocio.</p>
+          </div>
+        </div>
+
+        <!-- Hard Skills -->
+        <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Habilidades técnicas (Hard Skills)</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Diseño de casos de prueba</h3>
+            <p class="text-slate-600">Dominar técnicas como partición de equivalencia, análisis de valores límite, tablas de decisión y pruebas de transición de estados para cubrir flujos positivos, negativos y casos borde.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Pruebas de API</h3>
+            <p class="text-slate-600">Uso de herramientas como <strong>Postman</strong> para validar endpoints REST: métodos HTTP, códigos de estado, estructura JSON, autenticación (Bearer/OAuth) y validación de datos.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">SQL básico</h3>
+            <p class="text-slate-600">Consultas SELECT, JOIN y filtros para validar datos directamente en base de datos, verificar integridad referencial y confirmar que las operaciones CRUD funcionan correctamente.</p>
+          </div>
+          <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Introducción a la automatización</h3>
+            <p class="text-slate-600">Conocimiento en frameworks como <strong>Selenium</strong>, <strong>Cypress</strong> o <strong>Playwright</strong>, y nociones de Python, JavaScript o Java para escalar pruebas repetitivas e integrarlas en pipelines CI/CD.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box mt-8">En general, un buen QA combina habilidades técnicas, análisis crítico, capacidad de comunicación y orientación a la calidad del producto. El perfil más valorado hoy es el QA <strong>híbrido</strong>: funcional con bases sólidas de automatización.</div>
+        
+      </div>
+    </main>
+
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

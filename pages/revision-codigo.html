@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué aspectos debe considerar un QA al validar código fuente?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8">
+          <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Control de calidad técnica</span>
+          <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">¿Qué aspectos debe considerar un QA al validar código fuente?</h1>
+        </div>
+
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          La revisión de código (code review) es una forma de <strong>prueba estática</strong>: se evalúa el software sin ejecutarlo. Integrar al QA en esta etapa aplica el principio de <strong>shift-left testing</strong>, reduciendo el costo de corrección de defectos hasta 10 veces respecto a encontrarlos en producción.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+            <h3 class="text-xl font-bold mb-4">Aspectos de calidad del código</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2">• <span><strong>Legibilidad y claridad:</strong> nombres descriptivos, funciones cortas y con un único propósito.</span></li>
+              <li class="flex gap-2">• <span><strong>Cumplimiento de estándares:</strong> convenciones del equipo, guías de estilo y principios SOLID.</span></li>
+              <li class="flex gap-2">• <span><strong>Mantenibilidad y escalabilidad:</strong> código modular, sin duplicación (DRY) y fácil de extender.</span></li>
+              <li class="flex gap-2">• <span><strong>Rendimiento:</strong> evitar bucles innecesarios, consultas N+1 y uso excesivo de memoria.</span></li>
+              <li class="flex gap-2">• <span><strong>Manejo de errores:</strong> excepciones controladas, logs útiles y mensajes de error descriptivos.</span></li>
+              <li class="flex gap-2">• <span><strong>Cobertura de pruebas:</strong> verificar que existan pruebas unitarias para la lógica crítica del código.</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+            <h3 class="text-xl font-bold mb-4">Aspectos de seguridad (OWASP)</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2">• <span><strong>Validación de entradas:</strong> prevenir inyección SQL, XSS y command injection.</span></li>
+              <li class="flex gap-2">• <span><strong>Secretos hardcodeados:</strong> detectar claves de API, passwords o tokens embebidos en el código.</span></li>
+              <li class="flex gap-2">• <span><strong>Control de acceso:</strong> verificar que cada endpoint valide permisos y roles correctamente.</span></li>
+              <li class="flex gap-2">• <span><strong>Cifrado débil:</strong> evitar MD5 o SHA1 para contraseñas; usar bcrypt o SHA-256.</span></li>
+              <li class="flex gap-2">• <span><strong>Lógica de negocio:</strong> revisar flujos que puedan saltarse pasos críticos (ej.: pagos, autorizaciones).</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Herramientas -->
+        <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Herramientas y metodología de revisión</h2>
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <p class="font-bold text-slate-900 mb-1">SonarQube / SonarLint</p>
+            <p class="text-sm text-slate-600">Análisis estático automático que detecta code smells, bugs y vulnerabilidades. SonarLint se integra directo en el IDE para feedback en tiempo real mientras se escribe código.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <p class="font-bold text-slate-900 mb-1">Pull Requests + Quality Gates</p>
+            <p class="text-sm text-slate-600">Configurar SonarQube para comentar en PRs y bloquear merges si el Quality Gate falla. Principio "Clean as You Code": enfocarse en código nuevo, no deuda técnica legacy.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <p class="font-bold text-slate-900 mb-1">Checkstyle / PMD / ESLint</p>
+            <p class="text-sm text-slate-600">Linters que verifican el cumplimiento de convenciones de código de forma automática, eliminando discusiones subjetivas en el code review.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <p class="font-bold text-slate-900 mb-1">CI/CD integrado</p>
+            <p class="text-sm text-slate-600">Activar análisis automático en cada PR a través de GitHub Actions, GitLab CI o Azure DevOps. Los defectos críticos o de alta seguridad deben corregirse en SLAs definidos (ej.: 24–48 h).</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <p class="font-bold text-slate-900 mb-1">OWASP ZAP / Burp Suite</p>
+            <p class="text-sm text-slate-600">Herramientas de análisis dinámico (DAST) y pentesting para identificar vulnerabilidades de seguridad en el código en ejecución.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <p class="font-bold text-slate-900 mb-1">Revisión humana enfocada</p>
+            <p class="text-sm text-slate-600">El QA en code review no revisa formato (eso lo hace el linter), sino que se concentra en lógica de negocio, flujos de autorización y edge cases que las herramientas automáticas no detectan.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box mt-8">Además de revisar la funcionalidad, un QA debe verificar que el código sea seguro, mantenible, comprensible y alineado con las buenas prácticas del equipo. La combinación de <strong>análisis estático automatizado</strong> (SonarQube) con <strong>revisión humana</strong> (PR review) cubre tanto la escala como los matices de negocio.</div>
+        
+      </div>
+    </main>
+
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

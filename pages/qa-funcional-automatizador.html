@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Cuál es la diferencia entre un QA funcional y un QA automatizador?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div data-component="navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+      <div class="content-card p-6 md:p-10">
+        <div class="mb-8">
+          <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Roles y herramientas</span>
+          <h1 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">¿Cuál es la diferencia entre un QA funcional y un QA automatizador?</h1>
+        </div>
+
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          No son roles excluyentes: un buen QA automatizador primero debe entender los fundamentos del QA funcional para saber <strong>qué vale la pena automatizar</strong> y qué no. El perfil más valorado hoy en la industria es el <strong>QA híbrido</strong>: funcional con bases sólidas de automatización.
+        </p>
+
+        <!-- Comparativa -->
+        <div class="grid lg:grid-cols-2 gap-6">
+          <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+            <h3 class="text-xl font-bold mb-3 text-blue-800">QA Funcional (Manual)</h3>
+            <p class="text-slate-600 mb-4">Se enfoca en comprobar que el sistema cumpla con los requisitos funcionales y valide comportamientos reales desde la perspectiva del usuario. Es insustituible para pruebas exploratorias y detección de problemas de UX.</p>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>• Análisis y diseño de casos de prueba</li>
+              <li>• Validación de flujos positivos, negativos y edge cases</li>
+              <li>• Pruebas exploratorias y de aceptación</li>
+              <li>• Reporte detallado de bugs con pasos de reproducción</li>
+              <li>• Empatía con el usuario final para detectar problemas de UX</li>
+              <li>• Revisión de requisitos y criterios de aceptación</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-blue-100 border border-blue-200 text-blue-700 px-2.5 py-1 text-xs font-semibold">Jira</span>
+              <span class="rounded-full bg-blue-100 border border-blue-200 text-blue-700 px-2.5 py-1 text-xs font-semibold">TestRail</span>
+              <span class="rounded-full bg-blue-100 border border-blue-200 text-blue-700 px-2.5 py-1 text-xs font-semibold">Postman</span>
+              <span class="rounded-full bg-blue-100 border border-blue-200 text-blue-700 px-2.5 py-1 text-xs font-semibold">Zephyr</span>
+            </div>
+          </div>
+          <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+            <h3 class="text-xl font-bold mb-3 text-green-800">QA Automatizador</h3>
+            <p class="text-slate-600 mb-4">Se enfoca en crear scripts de prueba para ejecutar validaciones de forma repetitiva, rápida y consistente. Escala la cobertura de regresión sin esfuerzo manual adicional e integra pruebas en pipelines CI/CD.</p>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>• Diseño y mantenimiento de scripts de prueba automatizados</li>
+              <li>• Automatización de regresiones y smoke tests</li>
+              <li>• Integración de pruebas en pipelines CI/CD</li>
+              <li>• Control de versiones de los tests (Git)</li>
+              <li>• Análisis de resultados y reducción de flaky tests</li>
+              <li>• Generación de reportes automáticos de ejecución</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-green-100 border border-green-200 text-green-700 px-2.5 py-1 text-xs font-semibold">Selenium</span>
+              <span class="rounded-full bg-green-100 border border-green-200 text-green-700 px-2.5 py-1 text-xs font-semibold">Cypress</span>
+              <span class="rounded-full bg-green-100 border border-green-200 text-green-700 px-2.5 py-1 text-xs font-semibold">Playwright</span>
+              <span class="rounded-full bg-green-100 border border-green-200 text-green-700 px-2.5 py-1 text-xs font-semibold">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla comparativa herramientas -->
+        <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Comparativa de herramientas de automatización</h2>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+          <table class="min-w-full bg-white">
+            <thead class="bg-slate-100">
+              <tr>
+                <th class="text-left p-4 font-bold">Herramienta</th>
+                <th class="text-left p-4 font-bold">Lenguajes</th>
+                <th class="text-left p-4 font-bold">Navegadores</th>
+                <th class="text-left p-4 font-bold">Ventaja clave</th>
+                <th class="text-left p-4 font-bold">Limitación</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="p-4 font-semibold">Selenium</td>
+                <td class="p-4 text-sm">Java, Python, C#, JS, Ruby</td>
+                <td class="p-4 text-sm">Todos (Chrome, Firefox, Safari, Edge)</td>
+                <td class="p-4 text-sm">Mayor trayectoria, soporte multilinguaje real</td>
+                <td class="p-4 text-sm">Puede generar flaky tests sin waits bien configurados</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold">Cypress</td>
+                <td class="p-4 text-sm">JavaScript / TypeScript</td>
+                <td class="p-4 text-sm">Chrome, Firefox, Edge (Safari experimental)</td>
+                <td class="p-4 text-sm">Debugging visual en tiempo real, esperas automáticas</td>
+                <td class="p-4 text-sm">Sin soporte multi-tab; paralelismo avanzado es pago</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold">Playwright</td>
+                <td class="p-4 text-sm">JS, TS, Python, Java, C#</td>
+                <td class="p-4 text-sm">Chromium, Firefox, WebKit (nativo)</td>
+                <td class="p-4 text-sm">Paralelismo nativo gratuito, Trace Viewer, multi-tab</td>
+                <td class="p-4 text-sm">Menos adoptado en empresas legacy (bancos, aseguradoras)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box mt-8">La diferencia principal es que el QA funcional <strong>valida el comportamiento del sistema desde el punto de vista del usuario</strong>, mientras que el QA automatizador <strong>escala y repite esa validación con herramientas y scripts</strong>. El mercado actual demanda perfiles híbridos capaces de hacer ambos.</div>
+        
+      </div>
+    </main>
+
+
+    <div data-component="scroll-top"></div>
+    <div data-component="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
