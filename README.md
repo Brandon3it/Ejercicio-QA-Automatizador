@@ -23,31 +23,35 @@ También incluye un formato para registrar casos de prueba con enfoque en módul
 ## Estructura del proyecto
 
 ```text
-eureka-qa-week2/
+webqa/
 ├── README.md
+├── .gitignore
 ├── index.html
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
+│   ├── img/
+│   │   └── LOGO-1.webp
 │   └── js/
 │       ├── script.js
-│       ├── scroll-to-top.js
 │       ├── plan-pruebas.js
 │       └── formato-casos.js
-├── test-data/
-│   └── casos-prueba.json
+├── components/
+│   ├── navbar.html
+│   ├── footer.html
+│   └── scroll-top.html
 ├── pages/
-│   ├── rol-qa.html
+│   ├── bibliografia.html
+│   ├── formato-casos-prueba.html
 │   ├── habilidades-qa.html
 │   ├── java.html
-│   ├── revision-codigo.html
-│   ├── tipos-pruebas.html
-│   ├── qa-funcional-automatizador.html
 │   ├── plan-pruebas-api.html
-│   ├── formato-casos-prueba.html
-│   ├── bibliografia.html
-│   └── ...
-└── .gitignore
+│   ├── qa-funcional-automatizador.html
+│   ├── revision-codigo.html
+│   ├── rol-qa.html
+│   └── tipos-pruebas.html
+└── test-data/
+    └── casos-prueba.json
 ```
 
 ## Contenido incluido
